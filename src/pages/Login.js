@@ -1,5 +1,6 @@
 import InputText from "../components/log/InputText";
 import CheckBox from "../components/log/CheckBox";
+import { Link } from "react-router-dom";
 
 function Login() {
 
@@ -37,7 +38,7 @@ function Login() {
                         <button className=" w-full h-14 rounded bg-blue-500 text-white font-regular text-xl" type="submit">Sign In</button>
                     </div>
                     <div className="w-full text-center p-7">
-                        <span className="inline-block ml-5 text-slate-400 tracking-tighter">Don't have an account?</span> <a className="text-slate-400 tracking-tighter font-medium" href="#">Sing up</a>
+                        <span className="inline-block ml-5 text-slate-400 tracking-tighter">Don't have an account?</span> <Link className="text-slate-400 tracking-tighter font-medium" to="/Sign-up">Sing up</Link>
                     </div>
                 </form>
             </div>
