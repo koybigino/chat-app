@@ -15,8 +15,8 @@ function Main(){
     }
 
     return (
-        <div className='w-screen  flex justify-center items-center h-screen bg-gray-100'>
-            <div className='w-11/12 h-[90%] shadow-inner bg-white rounded-xl grid grid-cols-12'>
+        <div className='w-screen  flex justify-center items-center h-max-screen h-screen bg-gray-500'>
+            <div className='w-11/12 h-[90%] shadow-xl bg-white rounded-xl grid grid-cols-12'>
                 <div className="col-span-1 border-gray-100 border-r-2">
                     <IconLink />
                 </div>
