@@ -1,9 +1,9 @@
-import MessageContact from "../components/MessageContact";
-import IconLink from "../components/IconLink";
-import ConversationSection from "../components/ConversationSection";
+import IconLink from "../../components/IconLink";
+import Groups from "../../components/Groups";
+import GroupConversation from "../../components/GroupConversation";
 
 
-function Groups(){
+function Main(){
 
     return (
         <div className='w-screen  flex justify-center items-center h-screen bg-gray-100'>
@@ -12,14 +12,14 @@ function Groups(){
                     <IconLink />
                 </div>
                 <div className="col-span-4 border-gray-100 border-r-2 h-full">
-                    <MessageContact />
+                    <Groups />
                 </div>
                 <div className="col-span-7 ">
-                    <ConversationSection />
+                    <GroupConversation />
                 </div>
             </div>
         </div>
     )
 }
 
-export default Groups;
+export default Main;
