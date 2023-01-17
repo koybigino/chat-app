@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import AppBar from "./commons/AppBar";
 import Contact from "./messages/Contact";
@@ -11,6 +12,20 @@ function MessageContact() {
             opacity: '0.3',
         },
     }
+
+    const [contacts, setContact] = useState([
+        {id: 1, usename: "koybi gino", imgpath: "/img2.jpg", active: true, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+        {id: 2, usename: "koybi gino", imgpath: "/img2.jpg", active: false, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+        {id: 3, usename: "koybi gino", imgpath: "/img2.jpg", active: true, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+        {id: 4, usename: "koybi gino", imgpath: "/img2.jpg", active: false, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+        {id: 5, usename: "koybi gino", imgpath: "/img2.jpg", active: true, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+        {id: 6, usename: "koybi gino", imgpath: "/img2.jpg", active: false, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+        {id: 7, usename: "koybi gino", imgpath: "/img2.jpg", active: false, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+        {id: 8, usename: "koybi gino", imgpath: "/img2.jpg", active: true, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+        {id: 9, usename: "koybi gino", imgpath: "/img2.jpg", active: true, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+        {id: 10, usename: "koybi gino", imgpath: "/img2.jpg", active: true, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+        {id: 11, usename: "koybi gino", imgpath: "/img2.jpg", active: true, message: "Hi guy, how are you ?", num: "1", time: "5", timegrade: "m"},
+    ])
 
     return (
         <div className="w-full">
@@ -26,43 +41,12 @@ function MessageContact() {
                     </svg>
                 </SearchBar>
             </div>
-            <div className="p-5 h-[402px] overflow-y-auto overflow-x-hidden">
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={true} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={false} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={true} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={true} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={true} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={false} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={true} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={true} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={true} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={false} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={true} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
-                <Link to="/">
-                    <Contact imgpath="/img2.jpg" active={true} username="koybi gino" message="Hi guy, how are you ?" num="1" time="5" timegrade="m" />
-                </Link>
+            <div className="p-5  h-[410px] overflow-y-auto overflow-x-hidden">
+                {contacts.map((c) =>{
+                    return (<Link key={c.id} to="/">
+                    <Contact imgpath={c.imgpath} active={c.active} username={c.usename} message={c.message} num={c.num} time={c.time} timegrade={c.timegrade}/>
+                </Link>)
+                })}
             </div>
         </div>
     )
